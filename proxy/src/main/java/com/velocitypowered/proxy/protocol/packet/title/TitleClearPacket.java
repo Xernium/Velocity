@@ -7,8 +7,6 @@ import io.netty.buffer.ByteBuf;
 
 public class TitleClearPacket extends GenericTitlePacket {
 
-  private boolean resetTimes;
-
   public TitleClearPacket() {
     setAction(ActionType.HIDE);
   }
@@ -29,7 +27,7 @@ public class TitleClearPacket extends GenericTitlePacket {
   @Override
   public String toString() {
     return "TitleClearPacket{"
-        + ", reset=" + resetTimes
+        + ", resetTimes=" + (getAction() == ActionType.RESET)
         + '}';
   }
 
